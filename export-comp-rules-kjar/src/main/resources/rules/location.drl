@@ -1,0 +1,17 @@
+package rules;
+  
+import com.bala.export.comp.model.Item;
+  
+rule "Find location for CR10 with quantity >= 200"
+    when
+        $item : Item (itemCode == "CR10", quantity >= 200 );
+    then
+        $item.setWarehouseLocation("CH-456");
+end;
+  
+rule "Find location for YY06 with quantity > 100"
+    when
+         $item : Item (itemCode == "YY06", quantity > 100 );
+    then
+        $item.setWarehouseLocation("GU-560");
+end;

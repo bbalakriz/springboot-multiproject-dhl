@@ -1,0 +1,17 @@
+package rules;
+  
+import com.bala.military.comp.model.Item;
+  
+rule "Find location for HJ84 with quantity <= 500"
+    when
+        $item : Item (itemCode == "HJ84", quantity <= 500 );
+    then
+        $item.setWarehouseLocation("BORDER1");
+end;
+  
+rule "Find location for KN90 with quantity >= 1000"
+    when
+         $item : Item (itemCode == "KN90", quantity >= 1000 );
+    then
+        $item.setWarehouseLocation("BORDER2");
+end;
