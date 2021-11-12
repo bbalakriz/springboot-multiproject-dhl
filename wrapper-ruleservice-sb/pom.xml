@@ -10,7 +10,7 @@
 	
 	<groupId>com.bala</groupId>
 	<artifactId>wrapper-ruleservice</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.0</version>
 	<name>wrapper-ruleservice-sb</name>
 	<packaging>jar</packaging>
 	
