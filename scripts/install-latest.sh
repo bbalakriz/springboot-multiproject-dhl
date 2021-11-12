@@ -19,7 +19,7 @@ do
 		WGET_RESPONSE=$(wget http://nexus-bala-test.apps.prototype-03.bbfy.p1.openshiftapps.com/repository/dhl-rules/com/bala/wrapper-ruleservice/$NEW_VERSION/wrapper-ruleservice-$NEW_VERSION.jar)
 		if [[ $? -eq 0 ]]; then
 			# get the process id of the currently running jar and kill it
-			PID=$(ps -ef | grep "java -jar wrapper-ruleservice" | cut -d " " -f2)
+			PID=$(ps -ef | grep -v grep | grep "java -jar wrapper-ruleservice" | cut -d " " -f3)
 			kill -9 $PID
 			# execute the latest version of jar
 			nohup java -jar wrapper-ruleservice-$NEW_VERSION.jar &

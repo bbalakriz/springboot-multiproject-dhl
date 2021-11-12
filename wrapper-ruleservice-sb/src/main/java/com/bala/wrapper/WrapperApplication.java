@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan.Filter;
 
 @SpringBootApplication
 @ComponentScan(basePackages = { "com.bala.export.*",
-		"com.bala.military.*" }, excludeFilters = @Filter(SpringBootApplication.class))
+		"com.bala.military.*", "com.bala.wrapper.*" }, excludeFilters = @Filter(SpringBootApplication.class))
 public class WrapperApplication extends SpringBootServletInitializer {
 	public static void main(String[] args) {
 		SpringApplication.run(WrapperApplication.class, args);
